@@ -7,18 +7,14 @@ A Python tool to check the liveness status of a given list of servers
 1. Edit the host.json file and add the hosts like this:
 
 ``
-[
-	{
-		"host": "127.0.0.1",
-		"description": "Localhost"
-    	},
-	{
-		"host": "google.com",
-		"description": "Google Website"
-	},
-	{
-		"host": "300",
-		"description": "Dummy Host"
-	}
+[<br>
+	{<br>
+		"host": "127.0.0.1",<br>
+		"description": "Localhost"<br>
+    	},<br>
+	{<br>
+		"host": "google.com",<br>
+		"description": "Google Website"<br>
+	},<br>
 ]
 ``
