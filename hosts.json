@@ -1,0 +1,14 @@
+[
+	{
+		"host": "127.0.0.1",
+		"description": "Localhost"
+    	},
+	{
+		"host": "google.com",
+		"description": "Google Website"
+	},
+	{
+		"host": "300",
+		"description": "Dummy Host"
+	}
+]
