@@ -33,3 +33,4 @@ python server_liveness_checker.py
 
 ## Output
 
+![alt text](https://github.com/rmso27/server_liveness_checker/blob/main/print.png)
