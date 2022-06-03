@@ -1,11 +1,9 @@
-################################
-#
-#   Title: Server Liveness Checker
-#   Description: Script to check the liveness status of a server
-#   Version: 1.0
-#   Author: rmso27
-#
-################################
+"""
+    Title: Server Liveness Checker
+    Description: Script to check the liveness status of a server
+    Version: 1.0
+    Author: rmso27
+"""
 
 ## GENERAL ##
 
@@ -25,13 +23,13 @@ hosts_file = 'hosts.json'
 def read_hosts(hosts_file):
     temp_hosts_list = open(hosts_file, 'r')
     hosts_list = json.load(temp_hosts_list)
-    
+
     return hosts_list
-    
+
 # Check liveness
 def check_liveness(hosts_list):
 
-    liveness_results = ()
+    liveness_results = {}
     hosts_entries = []
     descriptions_entries = []
     statuses_entries = []
@@ -44,17 +42,17 @@ def check_liveness(hosts_list):
             statuses_entries += [colored('UP', 'green')]
         else:
             statuses_entries += [colored('DOWN', 'red')]
-        
+
     liveness_results = {'host': hosts_entries, 'description': descriptions_entries, 'status': statuses_entries}
-        
+
     return liveness_results
-        
+
 # Ping servers
 def ping_host(host):
 
     response = os.system('ping -c 1 ' + host)
-    
-    return response  
+
+    return response
 
 # Generate DataFrame and print it
 def generate_dataframe(liveness_results):
@@ -62,9 +60,8 @@ def generate_dataframe(liveness_results):
     data_frame = pd.DataFrame(liveness_results)
     print(tabulate.tabulate(data_frame, tablefmt = 'grid', headers = ['', 'Host', 'Description', 'Status']))
 
-
 ## SCRIPT EXECUTION ##
 
 list_of_hosts = read_hosts(hosts_file)
 check_results = check_liveness(list_of_hosts)
-generate_dataframe(check_results) 
+generate_dataframe(check_results)
